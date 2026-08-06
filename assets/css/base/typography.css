@@ -1,0 +1,104 @@
+/* ============================================================
+   Typography
+   ============================================================ */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--color-text);
+  background: var(--color-cream);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-navy);
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-medium);
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 4vw + 1rem, var(--fs-5xl));
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 2.5vw + 1rem, var(--fs-3xl));
+}
+
+h3 {
+  font-size: clamp(1.375rem, 1.5vw + 0.75rem, var(--fs-2xl));
+  line-height: var(--lh-snug);
+}
+
+h4 {
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+}
+
+h5 {
+  font-size: var(--fs-lg);
+}
+
+h6 {
+  font-size: var(--fs-md);
+}
+
+p {
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--color-text);
+}
+
+.lead {
+  font-size: var(--fs-md);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-navy);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+a:hover {
+  color: var(--color-gold-dark);
+}
+
+strong, b {
+  font-weight: var(--fw-medium);
+}
+
+/* Eyebrow — small labeled marker above section titles */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  display: inline-block;
+  margin-bottom: var(--space-3);
+}
+
+/* Section title with underline accent */
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--color-gold);
+  margin: var(--space-3) auto 0;
+}
+
+/* Serif accent — for the moments where we want editorial voice */
+.serif {
+  font-family: var(--font-display);
+}

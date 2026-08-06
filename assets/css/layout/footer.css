@@ -1,0 +1,171 @@
+/* ============================================================
+   Footer
+   ============================================================ */
+
+.footer {
+  background: var(--color-navy);
+  color: var(--color-text-inverse);
+  padding: var(--space-12) 0 var(--space-6);
+  margin-top: var(--space-16);
+}
+
+.footer__grid {
+  display: grid;
+  gap: var(--space-8);
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  margin-bottom: var(--space-10);
+}
+
+@media (max-width: 900px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 560px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer__brand {
+  max-width: 320px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.footer__logo img {
+  width: 44px;
+  height: 44px;
+  background: var(--color-white);
+  border-radius: var(--radius-full);
+  padding: 4px;
+}
+
+.footer__logo-text {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-medium);
+  color: var(--color-white);
+}
+
+.footer__blurb {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__heading {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  margin-bottom: var(--space-4);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__link {
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.75);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.footer__link:hover {
+  color: var(--color-gold);
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: var(--space-3);
+  line-height: var(--lh-snug);
+}
+
+.footer__socials {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.footer__social {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  transition: background var(--dur-fast) var(--ease);
+}
+
+.footer__social:hover {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--space-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- Floating action buttons ----------------------------- */
+.float-actions {
+  position: fixed;
+  bottom: var(--space-5);
+  right: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  z-index: var(--z-float);
+}
+
+.float-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: var(--fs-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.float-btn:hover {
+  transform: translateY(-2px);
+}
+
+.float-btn--whatsapp {
+  background: #25D366;
+}
+
+.float-btn--call {
+  background: var(--color-navy);
+}

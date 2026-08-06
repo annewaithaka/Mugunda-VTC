@@ -1,0 +1,40 @@
+/* ============================================================
+   Container
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .container,
+  .container-narrow,
+  .container-wide {
+    padding-inline: var(--space-8);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-narrow,
+  .container-wide {
+    padding-inline: var(--space-10);
+  }
+}

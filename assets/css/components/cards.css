@@ -1,0 +1,249 @@
+/* ============================================================
+   Cards
+   ============================================================ */
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: transform var(--dur-base) var(--ease),
+              box-shadow var(--dur-base) var(--ease);
+}
+
+.card--hover:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.card--soft {
+  background: var(--color-cream-2);
+  border-color: transparent;
+}
+
+.card--dark {
+  background: var(--color-navy);
+  color: var(--color-text-inverse);
+  border-color: var(--color-navy);
+}
+
+.card--gold {
+  background: var(--color-gold);
+  color: var(--color-text-on-gold);
+  border-color: var(--color-gold);
+}
+
+/* --- Icon at top of card --------------------------------- */
+.card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--color-gold-soft);
+  color: var(--color-gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-lg);
+  margin: 0 auto var(--space-4);
+}
+
+.card__icon--alt {
+  background: rgba(26, 43, 92, 0.08);
+  color: var(--color-navy);
+}
+
+.card__title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-medium);
+  color: var(--color-navy);
+  margin-bottom: var(--space-2);
+}
+
+.card__body {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  line-height: var(--lh-normal);
+}
+
+/* --- Stat card (for the stats strip) --------------------- */
+.stat {
+  text-align: center;
+  padding: var(--space-5) var(--space-3);
+}
+
+.stat__number {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw + 1rem, 3rem);
+  font-weight: var(--fw-medium);
+  color: var(--color-navy);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.stat__label {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  line-height: var(--lh-snug);
+}
+
+/* --- Course card ----------------------------------------- */
+.course-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--dur-base) var(--ease);
+}
+
+.course-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold);
+}
+
+.course-card__image {
+  aspect-ratio: 16 / 10;
+  background: var(--color-border-strong);
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-card__body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.course-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-medium);
+  color: var(--color-navy);
+}
+
+.course-card__meta {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.course-card__outcome {
+  display: inline-block;
+  background: var(--color-gold-soft);
+  color: var(--color-gold-dark);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  border-radius: var(--radius-full);
+  margin-top: var(--space-3);
+  align-self: flex-start;
+}
+
+/* --- Facility thumbnail ---------------------------------- */
+.facility {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.facility__image {
+  aspect-ratio: 4 / 3;
+  background: var(--color-border-strong);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.facility__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facility__label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  text-align: center;
+}
+
+/* --- Impact quote card ----------------------------------- */
+.impact {
+  background: var(--color-navy);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.impact__photo {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  background: var(--color-border-strong);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.impact__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.impact__quote {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: var(--lh-snug);
+  font-style: italic;
+}
+
+.impact__attribution {
+  display: block;
+  margin-top: var(--space-3);
+  font-size: var(--fs-sm);
+  font-style: normal;
+  color: var(--color-gold);
+}
+
+/* --- Support Us CTA card --------------------------------- */
+.support-cta {
+  background: var(--color-gold);
+  color: var(--color-text-on-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.support-cta__label {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-on-gold);
+}
+
+.support-cta__body {
+  font-size: var(--fs-sm);
+  color: var(--color-text-on-gold);
+}
+
+@media (max-width: 560px) {
+  .impact {
+    flex-direction: column;
+    text-align: center;
+  }
+}
