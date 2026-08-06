@@ -14,9 +14,10 @@
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: var(--color-navy);
+  background-color: var(--color-navy);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;   /* ← parallax */
   z-index: 0;
 }
 
@@ -29,6 +30,14 @@
     rgba(26, 43, 92, 0.85),
     rgba(26, 43, 92, 0.75)
   );
+}
+
+/* Disable parallax on touch devices — iOS ignores it anyway,
+   and a scrolling background on mobile looks better than a broken fixed one */
+@media (pointer: coarse), (max-width: 767px) {
+  .hero__bg {
+    background-attachment: scroll;
+  }
 }
 
 .hero__inner {
