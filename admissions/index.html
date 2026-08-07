@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apply Now — Mugunda Vocational Training Centre</title>
-  <meta name="description" content="Apply to Mugunda VTC. Simple admission process for vocational training in Kenya." />
+  <meta name="description"
+    content="Apply to Mugunda VTC. Simple admission process for TVET vocational training and adult education in Nyeri County, Kenya." />
   <link rel="icon" type="image/jpeg" href="/assets/images/logo/mugunda-logo.jpg" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,6 +15,168 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <!-- Page-scoped styles (admissions page only) -->
+  <style>
+    /* 3-step process */
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+    }
+
+    @media (min-width: 720px) {
+      .steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .step {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      position: relative;
+    }
+
+    .step__number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: var(--fw-medium);
+      color: var(--color-gold);
+      line-height: 1;
+      margin-bottom: var(--space-3);
+    }
+
+    .step__title {
+      font-family: var(--font-display);
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-medium);
+      color: var(--color-navy);
+      margin-bottom: var(--space-3);
+    }
+
+    .step__body {
+      font-size: var(--fs-sm);
+      color: var(--color-text-muted);
+      line-height: var(--lh-normal);
+    }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+      padding: 0;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: var(--fs-base);
+      line-height: var(--lh-normal);
+      color: var(--color-text);
+    }
+
+    .checklist li:last-child {
+      border-bottom: none;
+    }
+
+    .checklist li i {
+      color: var(--color-gold);
+      font-size: 1.125rem;
+      margin-top: 0.25rem;
+      flex-shrink: 0;
+    }
+
+    .checklist__note {
+      font-size: var(--fs-xs);
+      color: var(--color-text-soft);
+      display: block;
+      margin-top: var(--space-1);
+      font-style: italic;
+    }
+
+    /* Enquiry form card */
+    .enquiry-form {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 560px) {
+      .enquiry-form {
+        padding: var(--space-5);
+      }
+    }
+
+    /* Contact methods stack at bottom */
+    .contact-methods {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 720px) {
+      .contact-methods {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .contact-method {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      text-align: center;
+      transition: transform var(--dur-base) var(--ease),
+        box-shadow var(--dur-base) var(--ease),
+        border-color var(--dur-base) var(--ease);
+      display: block;
+    }
+
+    .contact-method:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-gold);
+    }
+
+    .contact-method__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-full);
+      background: var(--color-gold-soft);
+      color: var(--color-gold-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin: 0 auto var(--space-3);
+    }
+
+    .contact-method__label {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-medium);
+      color: var(--color-text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-1);
+    }
+
+    .contact-method__value {
+      font-family: var(--font-display);
+      font-size: var(--fs-md);
+      font-weight: var(--fw-medium);
+      color: var(--color-navy);
+    }
+  </style>
 </head>
 
 <body>
@@ -46,15 +209,242 @@
   </header>
 
   <main id="main">
-    <section class="section">
+
+    <!-- ================================================================
+         HERO
+         ================================================================ -->
+    <section class="section-sm">
       <div class="container-narrow text-center">
         <span class="eyebrow">Admissions</span>
         <h1>Start your training with us</h1>
         <p class="lead mt-4 text-muted">
-          Full admissions content in progress — will include the application form, admission requirements, and next steps.
+          Enrolment at Mugunda is straightforward. Choose the programme that fits you, reach out to our team, and we&#39;ll guide you through the rest.
         </p>
+        <div class="mt-6 flex gap-3" style="justify-content: center; flex-wrap: wrap;">
+          <a href="https://wa.me/254117360511" class="btn btn--primary" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>&nbsp;WhatsApp us
+          </a>
+          <a href="#enquiry" class="btn btn--outline">Enquiry form</a>
+        </div>
       </div>
     </section>
+
+    <!-- ================================================================
+         HOW TO ENROL — 3 STEPS
+         ================================================================ -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="text-center mb-8">
+          <span class="eyebrow">How to enrol</span>
+          <h2>Three steps to get started</h2>
+        </div>
+        <div class="steps">
+
+          <div class="step">
+            <div class="step__number">1</div>
+            <h3 class="step__title">Choose your programme</h3>
+            <p class="step__body">
+              Browse our <a href="/courses/">six programmes</a> — from Food &amp; Beverage Production to Home-based Care, computing, and adult education. Pick the one that matches your goals.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step__number">2</div>
+            <h3 class="step__title">Get in touch</h3>
+            <p class="step__body">
+              Call, WhatsApp, email, or fill in the enquiry form below. We&#39;ll answer your questions, confirm entry requirements, and let you know when the next intake starts.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step__number">3</div>
+            <h3 class="step__title">Complete enrolment</h3>
+            <p class="step__body">
+              Visit our campus at Nairutia Shopping Centre with your documents and registration fee. Our team will help you complete the paperwork and welcome you to Mugunda.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         WHAT TO PREPARE
+         ================================================================ -->
+    <section class="section" style="background: var(--color-cream-2);">
+      <div class="container">
+        <div class="text-center mb-8">
+          <span class="eyebrow">What to prepare</span>
+          <h2>Documents to bring</h2>
+          <p class="lead mt-4 text-muted">
+            To make enrolment quick, please have these ready when you visit or reach out.
+          </p>
+        </div>
+        <ul class="checklist">
+          <li>
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            <div>
+              <strong>Kenyan National ID or Birth Certificate</strong>
+              <span class="checklist__note">Original plus a copy for our records</span>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            <div>
+              <strong>Two passport-size photos</strong>
+              <span class="checklist__note">Recent, plain background</span>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            <div>
+              <strong>Academic certificates (where applicable)</strong>
+              <span class="checklist__note">KCSE or KCPE results — required for some programmes</span>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            <div>
+              <strong>Registration fee</strong>
+              <span class="checklist__note">Fees vary by programme — contact us for the current amount</span>
+            </div>
+          </li>
+        </ul>
+        <div class="text-center mt-8">
+          <p class="text-muted" style="font-size: var(--fs-sm);">
+            Requirements may vary by programme. If you&#39;re not sure what applies to you, <a href="https://wa.me/254117360511" target="_blank" rel="noopener">message us on WhatsApp</a> and we&#39;ll walk you through it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         ENQUIRY FORM
+         ================================================================ -->
+    <section class="section" id="enquiry">
+      <div class="container-narrow">
+        <div class="text-center mb-8">
+          <span class="eyebrow">Enquiry form</span>
+          <h2>Tell us a bit about yourself</h2>
+          <p class="lead mt-4 text-muted">
+            Fill in the form and we&#39;ll get back to you within one working day with next steps, requirements, and intake dates.
+          </p>
+        </div>
+
+        <form name="admissions" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="enquiry-form">
+          <input type="hidden" name="form-name" value="admissions" />
+
+          <p class="visually-hidden" aria-hidden="true">
+            <label>Don&#39;t fill this out if you&#39;re human: <input name="bot-field" /></label>
+          </p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Your name *</label>
+              <input class="form-input" type="text" id="name" name="name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email *</label>
+              <input class="form-input" type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone / WhatsApp *</label>
+              <input class="form-input" type="tel" id="phone" name="phone" required autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="programme">Programme of interest *</label>
+              <select class="form-select" id="programme" name="programme" required>
+                <option value="">Please select…</option>
+                <option value="food-production">Food &amp; Beverage Production (Level 4)</option>
+                <option value="computer-operations">Computer Operations (Level 3)</option>
+                <option value="home-based-care">Home-based Care (Level 4)</option>
+                <option value="english-proficiency">English Proficiency</option>
+                <option value="kcse">Primary &amp; Secondary Education (KCSE)</option>
+                <option value="basic-learning">Basic Learning &amp; Numeracy</option>
+                <option value="not-sure">Not sure yet — need advice</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="education">Highest level of education <span class="form-hint">(optional)</span></label>
+              <select class="form-select" id="education" name="education">
+                <option value="">Please select…</option>
+                <option value="none">None yet</option>
+                <option value="primary">Primary / KCPE</option>
+                <option value="secondary">Secondary / KCSE</option>
+                <option value="tertiary">Tertiary / other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="start">When would you like to start? <span class="form-hint">(optional)</span></label>
+              <select class="form-select" id="start" name="start">
+                <option value="">Please select…</option>
+                <option value="asap">As soon as possible</option>
+                <option value="next-intake">Next intake</option>
+                <option value="just-exploring">Just exploring for now</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Any questions or additional information? <span class="form-hint">(optional)</span></label>
+            <textarea class="form-textarea" id="message" name="message" rows="4"
+              placeholder="Ask us anything — fees, entry requirements, class schedules, boarding, or how to get to campus…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg">
+            Send enquiry <span class="btn__arrow" aria-hidden="true">→</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         BOTTOM CTA — CONTACT METHODS
+         ================================================================ -->
+    <section class="section" style="background: var(--color-cream-2);">
+      <div class="container">
+        <div class="text-center mb-8">
+          <h2>Prefer to talk?</h2>
+          <p class="lead mt-4 text-muted">
+            Reach out however works best for you.
+          </p>
+        </div>
+        <div class="contact-methods">
+
+          <a href="https://wa.me/254117360511" class="contact-method" target="_blank" rel="noopener">
+            <div class="contact-method__icon" aria-hidden="true">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="contact-method__label">WhatsApp</div>
+            <div class="contact-method__value">+254 117 360 511</div>
+          </a>
+
+          <a href="tel:+254117360511" class="contact-method">
+            <div class="contact-method__icon" aria-hidden="true">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="contact-method__label">Call us</div>
+            <div class="contact-method__value">+254 117 360 511</div>
+          </a>
+
+          <a href="mailto:mugundavocationalcentre@gmail.com?subject=Admissions%20enquiry" class="contact-method">
+            <div class="contact-method__icon" aria-hidden="true">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="contact-method__label">Email</div>
+            <div class="contact-method__value" style="font-size: var(--fs-sm);">mugundavocationalcentre@gmail.com</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer" role="contentinfo">
