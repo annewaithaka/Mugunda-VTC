@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Mugunda Vocational Training Centre</title>
-  <meta name="description" content="Get in touch with Mugunda VTC. Nyeri-Nyahururu Highway, Nairutia Shopping Centre, Nyeri County. Phone, WhatsApp, and email." />
+  <meta name="description"
+    content="Get in touch with Mugunda VTC. Nyeri-Nyahururu Highway, Nairutia Shopping Centre, Nyeri County. Phone, WhatsApp, and email." />
   <link rel="icon" type="image/jpeg" href="/assets/images/logo/mugunda-logo.jpg" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,6 +15,103 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <!-- Page-scoped styles (contact page only) -->
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    @media (min-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 5fr 7fr;
+        gap: var(--space-10);
+        align-items: start;
+      }
+    }
+
+    .contact-item {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+      margin-bottom: var(--space-6);
+    }
+
+    .contact-item__icon {
+      width: 44px;
+      height: 44px;
+      background: var(--color-gold-soft);
+      color: var(--color-gold-dark);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.125rem;
+    }
+
+    .contact-item__title {
+      font-family: var(--font-body);
+      font-size: var(--fs-md);
+      font-weight: var(--fw-semibold);
+      color: var(--color-navy);
+      margin-bottom: var(--space-2);
+    }
+
+    .contact-item__body {
+      font-size: var(--fs-sm);
+      color: var(--color-text-muted);
+      line-height: var(--lh-normal);
+    }
+
+    .contact-item__body a {
+      color: var(--color-navy);
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--dur-fast) var(--ease);
+    }
+
+    .contact-item__body a:hover {
+      border-bottom-color: var(--color-gold);
+      color: var(--color-gold-dark);
+    }
+
+    .map-wrapper {
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: var(--color-border);
+    }
+
+    @media (min-width: 900px) {
+      .map-wrapper {
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .contact-form {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 560px) {
+      .contact-form {
+        padding: var(--space-5);
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -46,15 +144,164 @@
   </header>
 
   <main id="main">
-    <section class="section">
+
+    <!-- ================================================================
+         HERO
+         ================================================================ -->
+    <section class="section-sm">
       <div class="container-narrow text-center">
         <span class="eyebrow">Contact</span>
         <h1>We&#39;d love to hear from you</h1>
         <p class="lead mt-4 text-muted">
-          Full contact content in progress — will include our physical address, phone numbers, WhatsApp, email, map, and office hours.
+          Reach out about admissions, partnerships, or to plan a visit to our campus in Nyeri.
         </p>
       </div>
     </section>
+
+    <!-- ================================================================
+         INFO + MAP
+         ================================================================ -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="contact-layout">
+
+          <div>
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h3 class="contact-item__title">Visit us</h3>
+                <div class="contact-item__body">
+                  Nyeri-Nyahururu Highway<br />
+                  Nairutia Shopping Centre<br />
+                  Nyeri County, Kenya<br />
+                  <strong>P.O Box 6-10129</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h3 class="contact-item__title">Talk to us</h3>
+                <div class="contact-item__body">
+                  WhatsApp / Phone: <a href="tel:+254117360511">+254 117 360 511</a><br />
+                  Alternative: <a href="tel:+254728764750">+254 728 764 750</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <h3 class="contact-item__title">Email us</h3>
+                <div class="contact-item__body">
+                  <a href="mailto:mugundavocationalcentre@gmail.com">mugundavocationalcentre@gmail.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div>
+                <h3 class="contact-item__title">Office hours</h3>
+                <div class="contact-item__body">
+                  Monday – Friday<br />
+                  8:00 AM – 5:00 PM
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <a href="https://wa.me/254117360511" class="btn btn--primary" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                &nbsp;Message us on WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="map-wrapper">
+            <iframe
+              src="https://maps.google.com/maps?q=Nairutia+Shopping+Centre,+Nyeri+County,+Kenya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+              title="Map showing Mugunda VTC location"></iframe>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         CONTACT FORM
+         ================================================================ -->
+    <section class="section" style="background: var(--color-cream-2);">
+      <div class="container-narrow">
+        <div class="text-center mb-8">
+          <span class="eyebrow">Get in touch</span>
+          <h2>Send us a message</h2>
+          <p class="lead mt-4 text-muted">
+            Fill out the form and we&#39;ll get back to you within one working day.
+          </p>
+        </div>
+
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+          <input type="hidden" name="form-name" value="contact" />
+
+          <p class="visually-hidden" aria-hidden="true">
+            <label>Don&#39;t fill this out if you&#39;re human: <input name="bot-field" /></label>
+          </p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Your name *</label>
+              <input class="form-input" type="text" id="name" name="name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email *</label>
+              <input class="form-input" type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone <span class="form-hint">(optional)</span></label>
+              <input class="form-input" type="tel" id="phone" name="phone" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="interest">I&#39;m interested in</label>
+              <select class="form-select" id="interest" name="interest">
+                <option value="">Please select…</option>
+                <option value="admissions">Admissions / enrolling as a student</option>
+                <option value="general">General inquiry</option>
+                <option value="partnership">Partnership or sponsorship</option>
+                <option value="visit">Planning a visit</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Your message *</label>
+            <textarea class="form-textarea" id="message" name="message" rows="5" required
+              placeholder="Tell us how we can help…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg">
+            Send message <span class="btn__arrow" aria-hidden="true">→</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer" role="contentinfo">
