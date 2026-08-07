@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Courses — Mugunda Vocational Training Centre</title>
-  <meta name="description" content="TVET-accredited vocational and academic programmes at Mugunda VTC — Food & Beverage Production, Computer Operations, Home-based Care, English proficiency, KCSE, and basic learning." />
+  <meta name="description"
+    content="TVET-accredited vocational and academic programmes at Mugunda VTC — Food & Beverage Production, Computer Operations, Home-based Care, English proficiency, KCSE, and basic learning." />
   <link rel="icon" type="image/jpeg" href="/assets/images/logo/mugunda-logo.jpg" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,6 +15,187 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <!-- Page-scoped styles (courses page only) -->
+  <style>
+    .courses-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    @media (min-width: 720px) {
+      .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .prog-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--dur-base) var(--ease),
+        box-shadow var(--dur-base) var(--ease),
+        border-color var(--dur-base) var(--ease);
+    }
+
+    .prog-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-gold);
+    }
+
+    .prog-card__media {
+      aspect-ratio: 16 / 10;
+      background: var(--color-border-strong);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .prog-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .prog-card__media--fallback {
+      background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-600) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .prog-card__media--fallback::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 30% 20%, rgba(244, 184, 64, 0.15) 0, transparent 40%),
+        radial-gradient(circle at 70% 80%, rgba(244, 184, 64, 0.1) 0, transparent 40%);
+    }
+
+    .prog-card__media-icon {
+      font-size: 2.75rem;
+      color: var(--color-gold);
+      position: relative;
+      z-index: 1;
+    }
+
+    .prog-card__body {
+      padding: var(--space-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      flex: 1;
+    }
+
+    .prog-card__title {
+      font-family: var(--font-display);
+      font-size: var(--fs-xl);
+      font-weight: var(--fw-medium);
+      color: var(--color-navy);
+      line-height: var(--lh-snug);
+    }
+
+    .prog-card__meta {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-medium);
+      color: var(--color-gold-dark);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .prog-card__desc {
+      font-size: var(--fs-sm);
+      color: var(--color-text-muted);
+      line-height: var(--lh-normal);
+      flex: 1;
+    }
+
+    .prog-card__actions {
+      margin-top: var(--space-4);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .brochure-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-medium);
+      color: var(--color-navy);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-sm);
+      transition: color var(--dur-fast) var(--ease),
+        background var(--dur-fast) var(--ease);
+      margin-left: calc(-1 * var(--space-3));
+    }
+
+    .brochure-btn:hover {
+      color: var(--color-gold-dark);
+      background: var(--color-gold-soft);
+    }
+
+    .brochure-btn--disabled {
+      color: var(--color-text-soft);
+      cursor: not-allowed;
+      font-style: italic;
+    }
+
+    .brochure-btn--disabled:hover {
+      color: var(--color-text-soft);
+      background: transparent;
+    }
+
+    .brochure-btn i {
+      font-size: 0.9rem;
+    }
+
+    /* Departments intro band */
+    .dept-strip {
+      background: var(--color-cream-2);
+      padding: var(--space-8) 0;
+      margin-bottom: var(--space-10);
+    }
+
+    .dept-strip__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-5);
+    }
+
+    .dept-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+    }
+
+    .dept-item i {
+      color: var(--color-gold-dark);
+      font-size: var(--fs-md);
+    }
+
+    .dept-item span {
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-medium);
+      color: var(--color-navy);
+    }
+  </style>
 </head>
 
 <body>
@@ -46,15 +228,201 @@
   </header>
 
   <main id="main">
-    <section class="section">
+
+    <!-- ================================================================
+         HERO
+         ================================================================ -->
+    <section class="section-sm">
       <div class="container-narrow text-center">
         <span class="eyebrow">Our courses</span>
         <h1>Practical skills for a real career</h1>
         <p class="lead mt-4 text-muted">
-          Full course content in progress — will include the complete list of programmes, entry requirements, fee structure, admission process, and downloadable brochures.
+          Mugunda offers TVET-accredited vocational programmes alongside adult education pathways. All vocational courses are examined by <strong>TVET CDACC</strong>.
         </p>
       </div>
     </section>
+
+    <!-- ================================================================
+         DEPARTMENTS STRIP
+         ================================================================ -->
+    <section class="dept-strip">
+      <div class="container">
+        <div class="text-center">
+          <span class="eyebrow">Academic departments</span>
+          <h2 style="font-size: var(--fs-xl); margin-top: var(--space-2);">Four departments, six programmes</h2>
+        </div>
+        <div class="dept-strip__grid">
+          <div class="dept-item">
+            <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+            <span>Hospitality</span>
+          </div>
+          <div class="dept-item">
+            <i class="fa-solid fa-desktop" aria-hidden="true"></i>
+            <span>Computing &amp; Informatics</span>
+          </div>
+          <div class="dept-item">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            <span>Liberal Studies</span>
+          </div>
+          <div class="dept-item">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <span>Adult Learning &amp; Basic Education</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         PROGRAMMES GRID
+         ================================================================ -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="courses-grid">
+
+          <!-- Food & Beverage Production -->
+          <article class="prog-card">
+            <div class="prog-card__media">
+              <img src="/assets/images/courses/food-production.jpg" alt="Plated meal by Mugunda Food Production trainees" />
+            </div>
+            <div class="prog-card__body">
+              <div class="prog-card__meta">Level 4 · Hospitality</div>
+              <h3 class="prog-card__title">Food &amp; Beverage Production</h3>
+              <p class="prog-card__desc">
+                Practical training in cookery, catering, kitchen safety, menu planning, and customer service. Trainees gain hands-on experience with industry-standard catering equipment and can serve outside events.
+              </p>
+              <div class="prog-card__actions">
+                <span class="brochure-btn brochure-btn--disabled" aria-disabled="true">
+                  <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                  Brochure coming soon
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Home-based Care -->
+          <article class="prog-card">
+            <div class="prog-card__media">
+              <img src="/assets/images/courses/home-based-care.jpg" alt="A caregiver trainee at Mugunda VTC" />
+            </div>
+            <div class="prog-card__body">
+              <div class="prog-card__meta">Level 4 · Caregiving</div>
+              <h3 class="prog-card__title">Home-based Care</h3>
+              <p class="prog-card__desc">
+                Practical caregiving skills including patient care, communication, hygiene, nutrition, first aid, and professional ethics — preparing trainees for careers in hospitals, care homes, and community health.
+              </p>
+              <div class="prog-card__actions">
+                <span class="brochure-btn brochure-btn--disabled" aria-disabled="true">
+                  <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                  Brochure coming soon
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Computer Operations -->
+          <article class="prog-card">
+            <div class="prog-card__media prog-card__media--fallback" aria-hidden="true">
+              <i class="fa-solid fa-keyboard prog-card__media-icon"></i>
+            </div>
+            <div class="prog-card__body">
+              <div class="prog-card__meta">Level 3 · Computing &amp; Informatics</div>
+              <h3 class="prog-card__title">Computer Operations</h3>
+              <p class="prog-card__desc">
+                Digital literacy and computer applications training for the modern workplace — from basic operations through applied office productivity.
+              </p>
+              <div class="prog-card__actions">
+                <span class="brochure-btn brochure-btn--disabled" aria-disabled="true">
+                  <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                  Brochure coming soon
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- English Proficiency -->
+          <article class="prog-card">
+            <div class="prog-card__media prog-card__media--fallback" aria-hidden="true">
+              <i class="fa-solid fa-language prog-card__media-icon"></i>
+            </div>
+            <div class="prog-card__body">
+              <div class="prog-card__meta">Liberal Studies</div>
+              <h3 class="prog-card__title">English Proficiency</h3>
+              <p class="prog-card__desc">
+                English language development for learners at all levels — building the confidence and fluency needed for further study, work, and everyday communication.
+              </p>
+              <div class="prog-card__actions">
+                <span class="brochure-btn brochure-btn--disabled" aria-disabled="true">
+                  <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                  Brochure coming soon
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Primary & Secondary Education (KCSE) -->
+          <article class="prog-card">
+            <div class="prog-card__media prog-card__media--fallback" aria-hidden="true">
+              <i class="fa-solid fa-graduation-cap prog-card__media-icon"></i>
+            </div>
+            <div class="prog-card__body">
+              <div class="prog-card__meta">Adult Learning &amp; Basic Education</div>
+              <h3 class="prog-card__title">Primary &amp; Secondary Education</h3>
+              <p class="prog-card__desc">
+                KCSE preparation and the Qualifying Test — supporting adult learners to complete their national examinations before the 8-4-4 system ends.
+              </p>
+              <div class="prog-card__actions">
+                <span class="brochure-btn brochure-btn--disabled" aria-disabled="true">
+                  <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                  Brochure coming soon
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Basic Learning & Numeracy -->
+          <article class="prog-card">
+            <div class="prog-card__media prog-card__media--fallback" aria-hidden="true">
+              <i class="fa-solid fa-book-open-reader prog-card__media-icon"></i>
+            </div>
+            <div class="prog-card__body">
+              <div class="prog-card__meta">Adult Learning &amp; Basic Education</div>
+              <h3 class="prog-card__title">Basic Learning &amp; Numeracy</h3>
+              <p class="prog-card__desc">
+                Foundational literacy and numeracy for adult learners — a continuing programme that remains available even as we transition to a vocational training centre.
+              </p>
+              <div class="prog-card__actions">
+                <span class="brochure-btn brochure-btn--disabled" aria-disabled="true">
+                  <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                  Brochure coming soon
+                </span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         BOTTOM CTA
+         ================================================================ -->
+    <section class="section">
+      <div class="container-narrow text-center">
+        <h2>Ready to enroll?</h2>
+        <p class="lead mt-4 text-muted mb-6">
+          Get in touch and we&#39;ll walk you through admission requirements, fees, and next steps.
+        </p>
+        <div class="flex gap-3" style="justify-content: center; flex-wrap: wrap;">
+          <a href="/admissions/" class="btn btn--primary">
+            Apply now <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://wa.me/254117360511" class="btn btn--outline" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>&nbsp;WhatsApp us
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer" role="contentinfo">
