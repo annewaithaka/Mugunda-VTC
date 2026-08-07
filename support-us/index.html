@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support Us — Mugunda Vocational Training Centre</title>
-  <meta name="description" content="Support vocational training in rural Kenya. Help us equip students with skills that change lives." />
+  <meta name="description"
+    content="Support vocational training in Nyeri, Kenya. Help us equip students with practical skills that transform their futures." />
   <link rel="icon" type="image/jpeg" href="/assets/images/logo/mugunda-logo.jpg" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,6 +15,225 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <!-- Page-scoped styles (support-us page only) -->
+  <style>
+    /* Impact area cards */
+    .impact-areas {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+    }
+
+    @media (min-width: 720px) {
+      .impact-areas {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .impact-area {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .impact-area__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-full);
+      background: var(--color-gold-soft);
+      color: var(--color-gold-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: var(--space-2);
+    }
+
+    .impact-area__title {
+      font-family: var(--font-display);
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-medium);
+      color: var(--color-navy);
+    }
+
+    .impact-area__body {
+      font-size: var(--fs-sm);
+      color: var(--color-text-muted);
+      line-height: var(--lh-normal);
+    }
+
+    /* Recent impact / case study */
+    .case-study {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 900px) {
+      .case-study {
+        grid-template-columns: 5fr 6fr;
+      }
+    }
+
+    .case-study__image {
+      aspect-ratio: 4 / 3;
+      background: var(--color-border-strong);
+      overflow: hidden;
+    }
+
+    @media (min-width: 900px) {
+      .case-study__image {
+        aspect-ratio: auto;
+        height: 100%;
+      }
+    }
+
+    .case-study__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .case-study__body {
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-3);
+    }
+
+    @media (max-width: 560px) {
+      .case-study__body {
+        padding: var(--space-5);
+      }
+    }
+
+    .case-study__body p {
+      font-size: var(--fs-base);
+      line-height: var(--lh-relaxed);
+      color: var(--color-text);
+    }
+
+    /* Alumni stories — alternating layout */
+    .alumni-story {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+      align-items: center;
+      margin-bottom: var(--space-12);
+    }
+
+    .alumni-story:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 900px) {
+      .alumni-story {
+        grid-template-columns: 5fr 7fr;
+        gap: var(--space-10);
+      }
+
+      .alumni-story--reverse {
+        grid-template-columns: 7fr 5fr;
+      }
+
+      .alumni-story--reverse .alumni-story__image {
+        order: 2;
+      }
+    }
+
+    .alumni-story__image {
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: var(--color-border-strong);
+    }
+
+    .alumni-story__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .alumni-story__meta {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-medium);
+      color: var(--color-gold-dark);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-3);
+    }
+
+    .alumni-story__name {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2vw + 0.75rem, 2rem);
+      font-weight: var(--fw-medium);
+      color: var(--color-navy);
+      margin-bottom: var(--space-4);
+      line-height: var(--lh-tight);
+    }
+
+    .alumni-story__body p {
+      font-size: var(--fs-base);
+      line-height: var(--lh-relaxed);
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+    }
+
+    /* Give card */
+    .give-card {
+      background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-600) 100%);
+      color: var(--color-text-inverse);
+      border-radius: var(--radius-lg);
+      padding: var(--space-10) var(--space-8);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .give-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(244, 184, 64, 0.12) 0, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(244, 184, 64, 0.08) 0, transparent 40%);
+      pointer-events: none;
+    }
+
+    .give-card > * {
+      position: relative;
+    }
+
+    .give-card h2 {
+      color: var(--color-white);
+      margin-bottom: var(--space-4);
+    }
+
+    .give-card p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: var(--fs-md);
+      line-height: var(--lh-relaxed);
+      max-width: 560px;
+      margin: 0 auto var(--space-6);
+    }
+
+    .give-card__note {
+      font-size: var(--fs-sm);
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: var(--space-5);
+      font-style: italic;
+    }
+  </style>
 </head>
 
 <body>
@@ -46,15 +266,194 @@
   </header>
 
   <main id="main">
-    <section class="section">
+
+    <!-- ================================================================
+         HERO
+         ================================================================ -->
+    <section class="section-sm">
       <div class="container-narrow text-center">
         <span class="eyebrow">Support our work</span>
-        <h1>Fund a life-changing skill</h1>
+        <h1>Help us grow</h1>
         <p class="lead mt-4 text-muted">
-          Full Support Us content in progress — will include projects seeking funding, outreach programmes, existing partners, annual reports, and giving options.
+          Your support helps young people in Nyeri County learn practical skills that change their futures. Every contribution — large or small — moves us forward.
         </p>
+        <div class="mt-6">
+          <a href="mailto:mugundavocationalcentre@gmail.com?subject=Supporting%20Mugunda%20VTC" class="btn btn--primary">
+            Email us about giving <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
     </section>
+
+    <!-- ================================================================
+         IMPACT AREAS
+         ================================================================ -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="text-center mb-8">
+          <span class="eyebrow">Where your support goes</span>
+          <h2>Three ways to help us grow</h2>
+        </div>
+        <div class="impact-areas">
+
+          <div class="impact-area">
+            <div class="impact-area__icon" aria-hidden="true">
+              <i class="fa-solid fa-toolbox"></i>
+            </div>
+            <h3 class="impact-area__title">Equipment &amp; facilities</h3>
+            <p class="impact-area__body">
+              Better tools make better training. Your gift helps us equip our workshops and labs with industry-standard resources — from catering equipment to computers to caregiving supplies.
+            </p>
+          </div>
+
+          <div class="impact-area">
+            <div class="impact-area__icon" aria-hidden="true">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <h3 class="impact-area__title">Student scholarships</h3>
+            <p class="impact-area__body">
+              Some of our most determined students can&#39;t afford full training fees. Your support helps a learner start a career they otherwise couldn&#39;t.
+            </p>
+          </div>
+
+          <div class="impact-area">
+            <div class="impact-area__icon" aria-hidden="true">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <h3 class="impact-area__title">Instructors &amp; programmes</h3>
+            <p class="impact-area__body">
+              Great trainers and expanding programmes need ongoing investment. Help us attract talent, add new courses, and keep raising the quality of what we offer.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         RECENT IMPACT — Catering equipment
+         ================================================================ -->
+    <section class="section" style="background: var(--color-cream-2);">
+      <div class="container">
+        <div class="text-center mb-8">
+          <span class="eyebrow">Recent impact</span>
+          <h2>Sponsorship empowers Food Production trainees</h2>
+        </div>
+        <div class="case-study">
+          <div class="case-study__image">
+            <img src="/assets/images/courses/food-production.jpg" alt="Plated meal prepared with new catering equipment" />
+          </div>
+          <div class="case-study__body">
+            <p>
+              A recent sponsor donated professional outside catering equipment to support our Food Production trainees.
+            </p>
+            <p>
+              The equipment has transformed practical training — enabling students to gain hands-on experience with industry-standard tools, and opening opportunities to serve community events, institutional functions, and private occasions.
+            </p>
+            <p>
+              Beyond the equipment itself, this sponsorship reflects the confidence that partners and well-wishers place in our mission of equipping young people with employable and entrepreneurial skills. With access to these tools, our trainees are better prepared for careers in hospitality — and better positioned to start their own catering businesses one day.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         STUDENT STORIES
+         ================================================================ -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-8">
+          <span class="eyebrow">Meet our students</span>
+          <h2>The people your support reaches</h2>
+        </div>
+
+        <!-- Miriam's story -->
+        <article class="alumni-story">
+          <div class="alumni-story__image">
+            <img src="/assets/images/hero/story-feature.jpg" alt="Miriam Njuguna, Food Production trainee at Mugunda VTC" />
+          </div>
+          <div>
+            <div class="alumni-story__meta">Food Production trainee · Form 3</div>
+            <h3 class="alumni-story__name">Miriam Njuguna</h3>
+            <div class="alumni-story__body">
+              <p>
+                After completing her KCPE in 2023, Miriam made an ambitious choice: she&#39;d pursue vocational training <em>alongside</em> her secondary school studies.
+              </p>
+              <p>
+                She enrolled at Mugunda in 2026 and completed Food Production Level 3. Now, driven by her passion for culinary arts, she&#39;s progressing to Level 4 — all while still studying in Form Three.
+              </p>
+              <p>
+                Through her training, Miriam has built practical skills in food preparation, kitchen safety, menu planning, customer service, and professional cookery — a foundation for a future in hospitality, whether as an employee or an entrepreneur.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Immaculate's story -->
+        <article class="alumni-story alumni-story--reverse">
+          <div class="alumni-story__image">
+            <img src="/assets/images/courses/home-based-care.jpg" alt="Immaculate Mundia, Caregiving trainee at Mugunda VTC" />
+          </div>
+          <div>
+            <div class="alumni-story__meta">Caregiving trainee · KCSE 2025</div>
+            <h3 class="alumni-story__name">From KCSE graduate to future caregiver</h3>
+            <div class="alumni-story__body">
+              <p>
+                After completing her KCSE in 2025, Immaculate Mundia made a clear decision: she&#39;d build a career in caregiving.
+              </p>
+              <p>
+                Motivated by a passion for helping others, she enrolled in Mugunda&#39;s Home-based Care programme to gain the practical knowledge and skills needed to provide quality care to children, older adults, and individuals with special needs.
+              </p>
+              <p>
+                Since joining Mugunda, Immaculate has demonstrated commitment and enthusiasm in both classroom and practical training. She&#39;s developing competencies in patient care, communication, hygiene, nutrition, first aid, and professional ethics — skills that prepare her for work in hospitals, care homes, community health programmes, and home-based services.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         HOW TO GIVE
+         ================================================================ -->
+    <section class="section" style="background: var(--color-cream-2);">
+      <div class="container-narrow">
+        <div class="give-card">
+          <span class="eyebrow" style="color: var(--color-gold);">How to give</span>
+          <h2>Get in touch about supporting Mugunda</h2>
+          <p>
+            We&#39;re setting up a range of giving options for local and international supporters. For now, the fastest way to support our work is to email us directly — we&#39;ll respond within one working day and walk you through the options that fit you best.
+          </p>
+          <a href="mailto:mugundavocationalcentre@gmail.com?subject=Supporting%20Mugunda%20VTC" class="btn btn--primary btn--lg">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>&nbsp;Email us about giving
+          </a>
+          <p class="give-card__note">
+            M-Pesa and bank transfer details for local supporters coming soon.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         BOTTOM CTA
+         ================================================================ -->
+    <section class="section">
+      <div class="container-narrow text-center">
+        <h2>Every gift helps us grow</h2>
+        <p class="lead mt-4 text-muted mb-6">
+          Whether you&#39;re a partner, a diaspora supporter, or a neighbour who believes in what we&#39;re doing — we&#39;d love to hear from you.
+        </p>
+        <div class="flex gap-3" style="justify-content: center; flex-wrap: wrap;">
+          <a href="mailto:mugundavocationalcentre@gmail.com?subject=Supporting%20Mugunda%20VTC" class="btn btn--primary">
+            Email us <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="/contact/" class="btn btn--outline">Other ways to contact us</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer" role="contentinfo">
