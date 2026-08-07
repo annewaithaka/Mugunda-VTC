@@ -167,5 +167,6 @@
 }
 
 .float-btn--call {
-  background: var(--color-navy);
+  /* background: var(--color-navy); */
+background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
 }

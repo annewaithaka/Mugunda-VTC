@@ -137,3 +137,14 @@
 .link-arrow:hover .btn__arrow {
   transform: translateX(3px);
 }
+
+.float-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
