@@ -170,3 +170,23 @@
   /* background: var(--color-navy); */
 background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
 }
+
+/* Smaller floating buttons on mobile — less content coverage */
+@media (max-width: 640px) {
+  .float-actions {
+    bottom: var(--space-4);
+    right: var(--space-4);
+    gap: var(--space-2);
+  }
+
+  .float-btn {
+    width: 44px;
+    height: 44px;
+    font-size: var(--fs-base);
+  }
+}
+
+/* Long emails / URLs shouldn't overflow the footer contact column */
+.footer__contact-item {
+  overflow-wrap: anywhere;
+}

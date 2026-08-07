@@ -111,6 +111,21 @@
         padding: var(--space-5);
       }
     }
+
+    /* Sprint 8a — mobile wrap-safe rules */
+    .contact-layout > * {
+      min-width: 0;
+    }
+
+    .contact-item > div:not(.contact-item__icon) {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .contact-item__body,
+    .contact-item__body a {
+      overflow-wrap: anywhere;
+    }
   </style>
 </head>
 
