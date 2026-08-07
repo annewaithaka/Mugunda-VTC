@@ -69,9 +69,9 @@
   --space-20: 8rem;      /* 128px */
 
   /* --- Layout ----------------------------------------------- */
-  --container-max: 1200px;
-  --container-narrow: 900px;
-  --container-wide: 1400px;
+  --container-max: 1700px;      /* was 1200px — widened for modern wide monitors */
+  --container-narrow: 960px;    /* for reading-focused sections (long text) */
+  --container-wide: 1900px;     /* near edge-to-edge for special sections */
 
   /* --- Radius ----------------------------------------------- */
   --radius-sm: 4px;

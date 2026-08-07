@@ -206,6 +206,7 @@
   font-size: var(--fs-md);
   line-height: var(--lh-snug);
   font-style: italic;
+  color: inherit;
 }
 
 .impact__attribution {
