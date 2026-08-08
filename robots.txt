@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /assets/
 
-Sitemap: https://mugundavtc.co.ke/sitemap.xml
+Sitemap: https://mugunda-vtc.onrender.com/sitemap.xml
