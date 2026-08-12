@@ -159,6 +159,45 @@
     .contact-item__body a {
       overflow-wrap: anywhere;
     }
+
+    /* Sprint 8c — phone rows with inline WhatsApp option */
+    .phone-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .phone-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .phone-row__label {
+      color: var(--color-text-soft);
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-medium);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      min-width: 72px;
+    }
+
+    .wa-inline {
+      color: #25D366 !important;
+      font-size: 1.125rem;
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      transition: background var(--dur-fast) var(--ease);
+      border-bottom: none !important;
+    }
+
+    .wa-inline:hover {
+      background: rgba(37, 211, 102, 0.1);
+      color: #25D366 !important;
+      border-bottom: none !important;
+    }
   </style>
 </head>
 
@@ -236,8 +275,20 @@
               <div>
                 <h3 class="contact-item__title">Talk to us</h3>
                 <div class="contact-item__body">
-                  WhatsApp / Phone: <a href="tel:+254117360511">+254 117 360 511</a><br />
-                  Alternative: <a href="tel:+254728764750">+254 728 764 750</a>
+                  <div class="phone-row">
+                    <span class="phone-row__label">Primary</span>
+                    <a href="tel:+254117360511">+254 117 360 511</a>
+                    <a href="https://wa.me/254117360511" target="_blank" rel="noopener" class="wa-inline" aria-label="WhatsApp primary number">
+                      <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                  </div>
+                  <div class="phone-row">
+                    <span class="phone-row__label">Alternative</span>
+                    <a href="tel:+254728764750">+254 728 764 750</a>
+                    <a href="https://wa.me/254728764750" target="_blank" rel="noopener" class="wa-inline" aria-label="WhatsApp alternative number">
+                      <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -364,7 +415,7 @@
             A TVET-accredited vocational training centre in Nyeri County, serving the Kieni West community with practical, employment-ready skills.
           </p>
           <div class="footer__socials">
-            <a href="#" class="footer__social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61592059910682&sk=photos" class="footer__social" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="footer__social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
