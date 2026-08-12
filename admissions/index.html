@@ -32,8 +32,8 @@
   <!-- Geo Location -->
   <meta name="geo.region" content="KE-36" />
   <meta name="geo.placename" content="Nyeri" />
-  <meta name="geo.position" content="-0.4167;36.9500" />
-  <meta name="ICBM" content="-0.4167, 36.9500" />
+  <meta name="geo.position" content="-0.1407;36.7125" />
+  <meta name="ICBM" content="-0.1407, 36.7125" />
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png" />
@@ -45,170 +45,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/main.css" />
 
-  <!-- Page-scoped styles (admissions page only) -->
   <style>
-    /* 3-step process */
-    .steps {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-5);
-    }
-
-    @media (min-width: 720px) {
-      .steps {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .step {
-      background: var(--color-white);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: var(--space-6);
-      position: relative;
-    }
-
-    .step__number {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: var(--fw-medium);
-      color: var(--color-gold);
-      line-height: 1;
-      margin-bottom: var(--space-3);
-    }
-
-    .step__title {
-      font-family: var(--font-display);
-      font-size: var(--fs-lg);
-      font-weight: var(--fw-medium);
-      color: var(--color-navy);
-      margin-bottom: var(--space-3);
-    }
-
-    .step__body {
-      font-size: var(--fs-sm);
-      color: var(--color-text-muted);
-      line-height: var(--lh-normal);
-    }
-
-    /* Checklist */
-    .checklist {
-      list-style: none;
-      padding: 0;
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    .checklist li {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-3);
-      padding: var(--space-4) 0;
-      border-bottom: 1px solid var(--color-border);
-      font-size: var(--fs-base);
-      line-height: var(--lh-normal);
-      color: var(--color-text);
-    }
-
-    .checklist li:last-child {
-      border-bottom: none;
-    }
-
-    .checklist li i {
-      color: var(--color-gold);
-      font-size: 1.125rem;
-      margin-top: 0.25rem;
-      flex-shrink: 0;
-    }
-
-    .checklist__note {
-      font-size: var(--fs-xs);
-      color: var(--color-text-soft);
-      display: block;
-      margin-top: var(--space-1);
-      font-style: italic;
-    }
-
-    /* Enquiry form card */
-    .enquiry-form {
-      background: var(--color-white);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: var(--space-8);
-      box-shadow: var(--shadow-sm);
-    }
-
-    @media (max-width: 560px) {
-      .enquiry-form {
-        padding: var(--space-5);
-      }
-    }
-
-    /* Contact methods stack at bottom */
-    .contact-methods {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-4);
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 720px) {
-      .contact-methods {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .contact-method {
-      background: var(--color-white);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: var(--space-5);
-      text-align: center;
-      transition: transform var(--dur-base) var(--ease),
-        box-shadow var(--dur-base) var(--ease),
-        border-color var(--dur-base) var(--ease);
-      display: block;
-    }
-
-    .contact-method:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--color-gold);
-    }
-
-    .contact-method__icon {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-full);
-      background: var(--color-gold-soft);
-      color: var(--color-gold-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      margin: 0 auto var(--space-3);
-    }
-
-    .contact-method__label {
-      font-size: var(--fs-xs);
-      font-weight: var(--fw-medium);
-      color: var(--color-text-muted);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: var(--space-1);
-    }
-
-    .contact-method__value {
-      font-family: var(--font-display);
-      font-size: var(--fs-md);
-      font-weight: var(--fw-medium);
-      color: var(--color-navy);
-    }
+    .steps { display: grid; grid-template-columns: 1fr; gap: var(--space-5); }
+    @media (min-width: 720px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); position: relative; }
+    .step__number { font-family: var(--font-display); font-size: 2.5rem; font-weight: var(--fw-medium); color: var(--color-gold); line-height: 1; margin-bottom: var(--space-3); }
+    .step__title { font-family: var(--font-display); font-size: var(--fs-lg); font-weight: var(--fw-medium); color: var(--color-navy); margin-bottom: var(--space-3); }
+    .step__body { font-size: var(--fs-sm); color: var(--color-text-muted); line-height: var(--lh-normal); }
+    .checklist { list-style: none; padding: 0; max-width: 620px; margin: 0 auto; }
+    .checklist li { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); font-size: var(--fs-base); line-height: var(--lh-normal); color: var(--color-text); }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li i { color: var(--color-gold); font-size: 1.125rem; margin-top: 0.25rem; flex-shrink: 0; }
+    .checklist__note { font-size: var(--fs-xs); color: var(--color-text-soft); display: block; margin-top: var(--space-1); font-style: italic; }
+    .enquiry-form { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-8); box-shadow: var(--shadow-sm); }
+    @media (max-width: 560px) { .enquiry-form { padding: var(--space-5); } }
+    .contact-methods { display: grid; grid-template-columns: 1fr; gap: var(--space-4); max-width: 720px; margin: 0 auto; }
+    @media (min-width: 720px) { .contact-methods { grid-template-columns: repeat(3, 1fr); } }
+    .contact-method { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); text-align: center; transition: transform var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease); display: block; }
+    .contact-method:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--color-gold); }
+    .contact-method__icon { width: 48px; height: 48px; border-radius: var(--radius-full); background: var(--color-gold-soft); color: var(--color-gold-dark); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin: 0 auto var(--space-3); }
+    .contact-method__label { font-size: var(--fs-xs); font-weight: var(--fw-medium); color: var(--color-text-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-1); }
+    .contact-method__value { font-family: var(--font-display); font-size: var(--fs-md); font-weight: var(--fw-medium); color: var(--color-navy); }
   </style>
 </head>
 
@@ -243,9 +104,6 @@
 
   <main id="main">
 
-    <!-- ================================================================
-         HERO
-         ================================================================ -->
     <section class="section-sm">
       <div class="container-narrow text-center">
         <span class="eyebrow">Admissions</span>
@@ -262,9 +120,6 @@
       </div>
     </section>
 
-    <!-- ================================================================
-         HOW TO ENROL — 3 STEPS
-         ================================================================ -->
     <section class="section-sm">
       <div class="container">
         <div class="text-center mb-8">
@@ -272,7 +127,6 @@
           <h2>Three steps to get started</h2>
         </div>
         <div class="steps">
-
           <div class="step">
             <div class="step__number">1</div>
             <h3 class="step__title">Choose your programme</h3>
@@ -280,7 +134,6 @@
               Browse our <a href="/courses/">six programmes</a> — from Food &amp; Beverage Production to Home-based Care, computing, and adult education. Pick the one that matches your goals.
             </p>
           </div>
-
           <div class="step">
             <div class="step__number">2</div>
             <h3 class="step__title">Get in touch</h3>
@@ -288,7 +141,6 @@
               Call, WhatsApp, email, or fill in the enquiry form below. We&#39;ll answer your questions, confirm entry requirements, and let you know when the next intake starts.
             </p>
           </div>
-
           <div class="step">
             <div class="step__number">3</div>
             <h3 class="step__title">Complete enrolment</h3>
@@ -296,14 +148,10 @@
               Visit our campus at Nairutia Shopping Centre with your documents and registration fee. Our team will help you complete the paperwork and welcome you to Mugunda.
             </p>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ================================================================
-         WHAT TO PREPARE
-         ================================================================ -->
     <section class="section" style="background: var(--color-cream-2);">
       <div class="container">
         <div class="text-center mb-8">
@@ -351,9 +199,6 @@
       </div>
     </section>
 
-    <!-- ================================================================
-         ENQUIRY FORM
-         ================================================================ -->
     <section class="section" id="enquiry">
       <div class="container-narrow">
         <div class="text-center mb-8">
@@ -364,12 +209,12 @@
           </p>
         </div>
 
-        <form name="admissions" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="enquiry-form">
-          <input type="hidden" name="form-name" value="admissions" />
+        <form action="https://formspree.io/f/YOUR_ADMISSIONS_FORM_ID" method="POST" class="enquiry-form">
+          <input type="hidden" name="_subject" value="New admissions enquiry — Mugunda VTC" />
+          <input type="hidden" name="_next" value="https://mugunda-vtc.onrender.com/thanks/" />
 
-          <p class="visually-hidden" aria-hidden="true">
-            <label>Don&#39;t fill this out if you&#39;re human: <input name="bot-field" /></label>
-          </p>
+          <!-- Formspree honeypot spam trap -->
+          <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off" />
 
           <div class="form-row">
             <div class="form-group">
@@ -437,9 +282,6 @@
       </div>
     </section>
 
-    <!-- ================================================================
-         BOTTOM CTA — CONTACT METHODS
-         ================================================================ -->
     <section class="section" style="background: var(--color-cream-2);">
       <div class="container">
         <div class="text-center mb-8">
@@ -449,7 +291,6 @@
           </p>
         </div>
         <div class="contact-methods">
-
           <a href="https://wa.me/254117360511" class="contact-method" target="_blank" rel="noopener">
             <div class="contact-method__icon" aria-hidden="true">
               <i class="fa-brands fa-whatsapp"></i>
@@ -457,7 +298,6 @@
             <div class="contact-method__label">WhatsApp</div>
             <div class="contact-method__value">+254 117 360 511</div>
           </a>
-
           <a href="tel:+254117360511" class="contact-method">
             <div class="contact-method__icon" aria-hidden="true">
               <i class="fa-solid fa-phone"></i>
@@ -465,7 +305,6 @@
             <div class="contact-method__label">Call us</div>
             <div class="contact-method__value">+254 117 360 511</div>
           </a>
-
           <a href="mailto:mugundavocationalcentre@gmail.com?subject=Admissions%20enquiry" class="contact-method">
             <div class="contact-method__icon" aria-hidden="true">
               <i class="fa-solid fa-envelope"></i>
@@ -473,7 +312,6 @@
             <div class="contact-method__label">Email</div>
             <div class="contact-method__value" style="font-size: var(--fs-sm);">mugundavocationalcentre@gmail.com</div>
           </a>
-
         </div>
       </div>
     </section>
@@ -525,17 +363,11 @@
     </div>
   </footer>
 
-  <!-- <div class="float-actions" aria-label="Quick contact">
-    <a href="https://wa.me/254117360511" class="float-btn float-btn--whatsapp" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">W</a>
-    <a href="tel:+254117360511" class="float-btn float-btn--call" aria-label="Call us">☎</a>
-  </div> -->
-
   <div class="float-actions" aria-label="Quick contact">
     <a href="https://wa.me/254117360511" class="float-btn float-btn--whatsapp" aria-label="Chat on WhatsApp"
       target="_blank" rel="noopener">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-
     <a href="tel:+254117360511" class="float-btn float-btn--call" aria-label="Call us">
       <i class="fa-solid fa-phone"></i>
     </a>
