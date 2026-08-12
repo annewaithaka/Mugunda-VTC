@@ -16,20 +16,23 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-navy);
   line-height: var(--lh-tight);
   font-weight: var(--fw-medium);
+  letter-spacing: -0.005em;
+}
+
+/* Larger, more formal display hierarchy — clamps bumped ~12% */
+h1 {
+  font-size: clamp(2.5rem, 4.5vw + 1rem, var(--fs-5xl));
+  line-height: 1.08;
   letter-spacing: -0.01em;
 }
 
-h1 {
-  font-size: clamp(2.25rem, 4vw + 1rem, var(--fs-5xl));
-  line-height: 1.1;
-}
-
 h2 {
-  font-size: clamp(1.75rem, 2.5vw + 1rem, var(--fs-3xl));
+  font-size: clamp(2rem, 3vw + 1rem, var(--fs-3xl));
+  line-height: 1.15;
 }
 
 h3 {
-  font-size: clamp(1.375rem, 1.5vw + 0.75rem, var(--fs-2xl));
+  font-size: clamp(1.5rem, 1.75vw + 0.875rem, var(--fs-2xl));
   line-height: var(--lh-snug);
 }
 
@@ -52,8 +55,9 @@ p {
   color: var(--color-text);
 }
 
+/* Lead paragraph — slightly larger for hero subtitles */
 .lead {
-  font-size: var(--fs-md);
+  font-size: clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
   line-height: var(--lh-relaxed);
   color: var(--color-text);
 }
@@ -68,15 +72,15 @@ a:hover {
 }
 
 strong, b {
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-semibold);
 }
 
 /* Eyebrow — small labeled marker above section titles */
 .eyebrow {
   font-family: var(--font-body);
   font-size: var(--fs-xs);
-  font-weight: var(--fw-medium);
-  letter-spacing: 0.15em;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-gold-dark);
   display: inline-block;
@@ -92,7 +96,7 @@ strong, b {
 .section-title::after {
   content: '';
   display: block;
-  width: 48px;
+  width: 56px;
   height: 2px;
   background: var(--color-gold);
   margin: var(--space-3) auto 0;
