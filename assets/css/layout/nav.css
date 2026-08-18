@@ -18,17 +18,18 @@
 .nav__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: var(--space-3) 0;
-  gap: var(--space-5);
+  gap: var(--space-4);
 }
 
 /* --- Logo block ------------------------------------------ */
+/* margin-right: auto pushes nav + CTA to the right, close together */
 .nav__logo {
   display: flex;
   align-items: center;
   gap: var(--space-3);
   flex-shrink: 0;
+  margin-right: auto;
 }
 
 .nav__logo img {
@@ -68,7 +69,7 @@
 }
 
 .nav__link {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-base);
   font-weight: var(--fw-medium);
   color: var(--color-text);
   padding: var(--space-2) 0;
